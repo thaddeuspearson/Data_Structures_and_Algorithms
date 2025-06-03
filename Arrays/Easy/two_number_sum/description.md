@@ -11,6 +11,10 @@ Return the two numbers in any order
 ## Example
 
 ```
-Input: nums = [2, 7, 11, 15], target = 9  
-Output: [2, 7]
+Input: 
+    nums = [2, 7, 11, 15]
+    target = 9  
+
+Output: 
+    [2, 7]
 ```
