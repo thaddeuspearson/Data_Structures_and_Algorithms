@@ -1,3 +1,11 @@
+import sys
+from pathlib import Path
+utils_path = Path(__file__).resolve().parents[3] / "utils"
+sys.path.append(str(utils_path))
+from run_tests import run_tests
+from inspect import getmembers, isfunction
+
+
 def solution_1(array: list, sequence: list) -> bool:
     """
     Time Complexity: O(n) - n is the length of array
@@ -34,3 +42,13 @@ def solution_2(array: list, sequence: list) -> bool:
             sub_seq_idx += 1
 
     return sub_seq_idx == seq_len
+
+
+if __name__ == "__main__":
+    solutions = [
+        f for _,
+        f in getmembers(sys.modules[__name__], isfunction)
+        if "solution" in f.__name__
+    ]
+    for func in solutions:
+        run_tests(func, "tests.json")
