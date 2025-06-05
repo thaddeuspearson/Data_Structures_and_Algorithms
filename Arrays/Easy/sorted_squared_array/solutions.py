@@ -1,9 +1,9 @@
 import sys
 from pathlib import Path
+from inspect import getmembers, isfunction
 utils_path = Path(__file__).resolve().parents[3] / "utils"
 sys.path.append(str(utils_path))
-from run_tests import run_tests
-from inspect import getmembers, isfunction
+from run_tests import run_tests  # noqa E402
 
 
 def solution_1(array: list) -> list:
