@@ -6,7 +6,11 @@ from run_tests import run_tests
 from inspect import getmembers, isfunction
 
 
-def solution_1():
+def solution_1() -> :
+    """
+    Time Complexity: O(nlog(n))
+    Space Complexity: O(1)
+    """
     pass
 
 
