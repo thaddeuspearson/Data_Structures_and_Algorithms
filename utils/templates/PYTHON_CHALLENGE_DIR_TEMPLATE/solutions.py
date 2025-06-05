@@ -6,7 +6,7 @@ sys.path.append(str(utils_path))
 from run_tests import run_tests  # noqa E402
 
 
-def solution_1() -> :
+def solution_1():
     """
     Time Complexity: O(nlog(n))
     Space Complexity: O(1)
