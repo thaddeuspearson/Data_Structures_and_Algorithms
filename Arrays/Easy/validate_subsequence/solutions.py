@@ -23,7 +23,7 @@ def solution_1(array: list, sequence: list) -> bool:
 
         arr_idx += 1
 
-    return arr_idx == arr_len
+    return sub_seq_idx == sub_seq_len
 
 
 def solution_2(array: list, sequence: list) -> bool:
