@@ -33,7 +33,8 @@ def perform_tests(func_to_test: Callable, tests: dict):
     test_num = 1
 
     for test_case in tests:
-        actual = func_to_test(**(test_case["input"]))
+        test_input = test_case["input"]
+        actual = func_to_test(**test_input)
         expected = test_case["output"]
         passed = actual == expected
 
@@ -41,6 +42,7 @@ def perform_tests(func_to_test: Callable, tests: dict):
             "func_name": func_to_test.__name__,
             "test_num": test_num,
             "passed": passed,
+            "input": ", ".join(f"{v}" for v in test_input.values()),
             "expected": expected,
             "actual": actual
         })
@@ -61,12 +63,13 @@ def display_results(results: list) -> None:
         print(line)
         print(
             f"   [{'+' if result['passed'] else '-'}] {result['func_name']}:"
-            f" Test {result['test_num']}\n"
+            f" Test {result['test_num']}\n\n"
         )
 
         if not result['passed']:
-            print(f"\texpected: {result['expected']}")
-            print(f"\tactual:   {result['actual']}")
+            print(f"\t   input: {(result['input'])}\n")
+            print(f"\texpected: {result['expected']}\n")
+            print(f"\t  actual: {result['actual']}\n")
         else:
             total_passed += 1
     print(line)

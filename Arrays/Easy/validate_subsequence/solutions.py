@@ -46,8 +46,7 @@ def solution_2(array: list, sequence: list) -> bool:
 
 if __name__ == "__main__":
     solutions = [
-        f for _,
-        f in getmembers(sys.modules[__name__], isfunction)
+        f for _, f in getmembers(sys.modules[__name__], isfunction)
         if "solution" in f.__name__
     ]
     for func in solutions:
