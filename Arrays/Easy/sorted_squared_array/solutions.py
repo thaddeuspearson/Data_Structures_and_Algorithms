@@ -6,7 +6,6 @@ sys.path.append(str(utils_path))
 from run_tests import run_tests  # noqa E402
 
 
-# Find the middle and go out
 def solution_1(array: list) -> list:
     """
     Time Complexity: O(n) - n is the size of the input array
@@ -40,7 +39,6 @@ def solution_1(array: list) -> list:
     return sorted_squared
 
 
-# Go from the outside to the middle
 def solution_2(array: list) -> list:
     """
     Time Complexity: O(n) - n is the size of the input array
@@ -59,8 +57,7 @@ def solution_2(array: list) -> list:
             sorted_squared[idx] = array[r_idx]**2
             r_idx -= 1
 
-        if r_idx < l_idx:
-            return sorted_squared
+    return sorted_squared
 
 
 if __name__ == "__main__":
