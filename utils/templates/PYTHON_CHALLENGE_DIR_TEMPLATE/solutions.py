@@ -8,8 +8,8 @@ from run_tests import run_tests  # noqa E402
 
 def solution_1():
     """
-    Time Complexity: O(nlog(n))
-    Space Complexity: O(1)
+    Time Complexity: O()
+    Space Complexity: O()
     """
     pass
 
