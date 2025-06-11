@@ -75,7 +75,7 @@ def display_results(results: list) -> None:
     print(line)
     print(
         f"   Total Tests Passed: {total_passed} out of {len(results)}"
-        f" ({round(total_passed / len(results), 2) * 100}%)\n\n\n"
+        f" ({round(total_passed / len(results) * 100, 2):.2f}%)\n\n\n"
     )
 
 
