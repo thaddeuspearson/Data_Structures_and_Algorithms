@@ -15,10 +15,10 @@ def solution_1():
 
 
 if __name__ == "__main__":
+    test_cases_path = Path(__file__).parent / "tests.json"
     solutions = [
         f for _, f in getmembers(sys.modules[__name__], isfunction)
         if "solution" in f.__name__
     ]
-    for func in solutions:
-        test_cases_path = Path(__file__).parent / "tests.json"
-        run_tests(func, test_cases_path)
+    for solution in solutions:
+        run_tests(solution, test_cases_path)

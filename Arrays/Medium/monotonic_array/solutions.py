@@ -36,5 +36,5 @@ if __name__ == "__main__":
         f for _, f in getmembers(sys.modules[__name__], isfunction)
         if "solution" in f.__name__
     ]
-    for func in solutions:
-        run_tests(func, test_cases_path)
+    for solution in solutions:
+        run_tests(solution, test_cases_path)
