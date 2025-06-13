@@ -20,4 +20,5 @@ if __name__ == "__main__":
         if "solution" in f.__name__
     ]
     for func in solutions:
-        run_tests(func, "tests.json")
+        test_cases_path = Path(__file__).parent / "tests.json"
+        run_tests(func, test_cases_path)
