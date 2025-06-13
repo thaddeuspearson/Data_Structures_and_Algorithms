@@ -1,0 +1,62 @@
+[
+  {
+    "input": {
+      "words": ["bella", "label", "roller"]
+    },
+    "output": ["e", "l"]
+  },
+  {
+    "input": {
+      "words": ["cool", "lock", "cook"]
+    },
+    "output": ["c", "o"]
+  },
+  {
+    "input": {
+      "words": ["a", "b", "c"]
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["abcde"]
+    },
+    "output": ["a", "b", "c", "d", "e"]
+  },
+  {
+    "input": {
+      "words": []
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["ABC123", "123ABC", "A1B2C3"]
+    },
+    "output": ["A", "B", "C", "1", "2", "3"]
+  },
+  {
+    "input": {
+      "words": ["xyz!", "xy?", "xz$"]
+    },
+    "output": ["x"]
+  },
+  {
+    "input": {
+      "words": ["@#$%", "%^&@", "@%"]
+    },
+    "output": ["@", "%"]
+  },
+  {
+    "input": {
+      "words": ["aaa", "aa", "a"]
+    },
+    "output": ["a"]
+  },
+  {
+    "input": {
+      "words": ["Hello!", "Helium!", "Help!"]
+    },
+    "output": ["H", "e", "l", "!"]
+  }
+]
