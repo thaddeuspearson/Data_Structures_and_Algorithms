@@ -1,0 +1,62 @@
+[
+  {
+    "input": {
+      "string": "A man, a plan, a canal: Panama"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "race a car"
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "string": ""
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "No lemon, no melon"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "Was it a car or a cat I saw?"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "Madam In Eden, I'm Adam"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "12321"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "12345"
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "string": "TacoCat!"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "No 'x' in Nixon"
+    },
+    "output": true
+  }
+]
