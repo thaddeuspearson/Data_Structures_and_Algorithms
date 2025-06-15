@@ -1,0 +1,74 @@
+[
+  {
+    "input": {
+      "string": "[({})]"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "[(]{)}"
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "string": "([]{})"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "(((())))[]{}"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "((((((("
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "string": "())(()"
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "string": "[[[[[[[[]]]]]]]]"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "{[()]}{[()]}"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "}{"
+    },
+    "output": false
+  },
+  {
+    "input": {
+      "string": "([{}])({[()]})"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "(a + b) * [c - d]"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string": "function test() { return [1, 2, 3];"
+    },
+    "output": false
+  }
+]
