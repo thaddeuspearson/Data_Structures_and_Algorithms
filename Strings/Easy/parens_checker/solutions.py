@@ -20,13 +20,11 @@ def solution_1(string):
     closings_stack = []
 
     for char in string:
-
         if char in closing_braces:
             if not closings_stack or char != closings_stack.pop():
                 return False
         elif char in brace_pairs:
             closings_stack.append(brace_pairs[char])
-
     return not closings_stack
 
 
