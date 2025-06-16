@@ -1,0 +1,62 @@
+[
+  {
+    "input": {
+      "words": ["stressed", "desserts"]
+    },
+    "output": [["stressed", "desserts"]]
+  },
+  {
+    "input": {
+      "words": ["hello", "olleh", "world", "dlrow"]
+    },
+    "output": [["hello", "olleh"], ["world", "dlrow"]]
+  },
+  {
+    "input": {
+      "words": ["abc", "def", "cba", "fed", "ghi"]
+    },
+    "output": [["abc", "cba"], ["def", "fed"]]
+  },
+  {
+    "input": {
+      "words": ["abc", "def", "ghi"]
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["", ""]
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["a", "a"]
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["racecar", "madam", "level", "racecar", "madam", "level"]
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["loop", "pool", "door", "rod"]
+    },
+    "output": [["loop", "pool"]]
+  },
+  {
+    "input": {
+      "words": ["edcba", "12345", "abcde", "54321"]
+    },
+    "output": [["edcba", "abcde"], ["12345", "54321"]]
+  },
+  {
+    "input": {
+      "words": []
+    },
+    "output": []
+  }
+]
