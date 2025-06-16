@@ -1,8 +1,10 @@
 """
-A basic testing suite to handle testing for the challenges
+A basic testing suite to handle test cases for the challenges
 """
-import sys
-import json
+from inspect import getmembers, getmodule, isfunction, stack
+from json import load
+from sys import exit
+from pathlib import Path
 from typing import Callable
 
 
@@ -11,7 +13,7 @@ def load_test_cases(tests_path: str) -> list:
     Load json test cases, expects a list of JSON blobs
     """
     with open(tests_path, 'r', encoding="utf-8") as f:
-        return json.load(f)
+        return load(f)
 
 
 def perform_tests(func_to_test: Callable, tests: dict):
@@ -46,9 +48,7 @@ def perform_tests(func_to_test: Callable, tests: dict):
             "expected": expected,
             "actual": actual
         })
-
         test_num += 1
-
     return results
 
 
@@ -79,15 +79,47 @@ def display_results(results: list) -> None:
     )
 
 
-def run_tests(func_to_test: Callable, tests_path: str) -> None:
+def get_caller_module():
+    """
+    Return the module object of the immediate caller
+    """
+    current_file = __file__
+
+    for frame_info in stack():
+        module = getmodule(frame_info.frame)
+        if module and getattr(module, "__file__", None) != current_file:
+            return module
+
+
+def get_solutions():
+    """
+    Returns a list of (name, function) tuples for all solutions given
+    """
+    return [
+        solution
+        for name, solution in getmembers(get_caller_module(), isfunction)
+        if "solution" in name
+    ]
+
+
+def get_test_cases_path():
+    """
+    Return the absolute path to the caller's module file
+    """
+    return Path(get_caller_module().__file__).resolve().parent / "tests.json"
+
+
+def run_tests() -> None:
     """
     Handler for test case execution and display
     """
+    tests_path = get_test_cases_path()
+
     try:
         tests = load_test_cases(tests_path)
     except FileNotFoundError:
         print("Missing valid `tests.json` file in the working directory.")
-        sys.exit(1)
+        exit(1)
 
-    results = perform_tests(func_to_test, tests)
-    display_results(results)
+    for solution in get_solutions():
+        display_results(perform_tests(solution, tests))
