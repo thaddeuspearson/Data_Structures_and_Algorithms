@@ -1,0 +1,62 @@
+[
+  {
+    "input": {
+      "strings": []
+    },
+    "output": [[]]
+  },
+  {
+    "input": {
+      "strings": ["a"]
+    },
+    "output": [["a"]]
+  },
+  {
+    "input": {
+      "strings": ["abc", "bca", "cab", "xyz", "zyx", "yxz"]
+    },
+    "output": [["abc", "bca", "cab"], ["xyz", "zyx", "yxz"]]
+  },
+  {
+    "input": {
+      "strings": ["listen", "silent", "enlist", "google", "gogole", "apple"]
+    },
+    "output": [["listen", "silent", "enlist"], ["google", "gogole"], ["apple"]]
+  },
+  {
+    "input": {
+      "strings": ["abc", "def", "ghi"]
+    },
+    "output": [["abc"], ["def"], ["ghi"]]
+  },
+  {
+    "input": {
+      "strings": ["", ""]
+    },
+    "output": [["", ""]]
+  },
+  {
+    "input": {
+      "strings": ["a", "b", "a"]
+    },
+    "output": [["a", "a"], ["b"]]
+  },
+  {
+    "input": {
+      "strings": ["ab", "ba", "abc", "cab", "bac"]
+    },
+    "output": [["ab", "ba"], ["abc", "cab", "bac"]]
+  },
+  {
+    "input": {
+      "strings": ["race", "hello", "care", "acre", "world"]
+    },
+    "output": [["race", "care", "acre"], ["hello"], ["world"]]
+  },
+  {
+    "input": {
+      "strings": ["stop", "pots", "tops", "spot", "opts"]
+    },
+    "output": [["stop", "pots", "tops", "spot", "opts"]]
+  }
+]
