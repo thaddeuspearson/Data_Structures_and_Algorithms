@@ -1,0 +1,62 @@
+[
+  {
+    "input": {
+      "string": "highnoon"
+    },
+    "output": "noon"
+  },
+  {
+    "input": {
+      "string": "mirrorimage"
+    },
+    "output": "ror"
+  },
+  {
+    "input": {
+      "string": "keeper"
+    },
+    "output": "epe"
+  },
+  {
+    "input": {
+      "string": "levelheaded"
+    },
+    "output": "level"
+  },
+  {
+    "input": {
+      "string": "abcdefgfedxyz"
+    },
+    "output": "defgfed"
+  },
+  {
+    "input": {
+      "string": "referendum"
+    },
+    "output": "refer"
+  },
+  {
+    "input": {
+      "string": "starttarts"
+    },
+    "output": "tt"
+  },
+  {
+    "input": {
+      "string": "bananas"
+    },
+    "output": "anana"
+  },
+  {
+    "input": {
+      "string": "xyzabbaxyz"
+    },
+    "output": "abba"
+  },
+  {
+    "input": {
+      "string": "moonlight"
+    },
+    "output": "oo"
+  }
+]
