@@ -1,0 +1,62 @@
+[
+  {
+    "input": {
+      "words": ["bella", "label", "roller"]
+    },
+    "output": ["b", "e", "l", "l", "a", "o", "r", "r"]
+  },
+  {
+    "input": {
+      "words": ["cat", "car", "cart"]
+    },
+    "output": ["c", "a", "t", "r"]
+  },
+  {
+    "input": {
+      "words": ["apple", "peach", "grape"]
+    },
+    "output": ["a", "p", "p", "l", "e", "c", "h", "g", "r"]
+  },
+  {
+    "input": {
+      "words": ["abc", "def", "ghi"]
+    },
+    "output": ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+  },
+  {
+    "input": {
+      "words": ["a", "aa", "aaa"]
+    },
+    "output": ["a", "a", "a"]
+  },
+  {
+    "input": {
+      "words": ["moon", "soon", "noon"]
+    },
+    "output": ["m", "o", "o", "n", "s"]
+  },
+  {
+    "input": {
+      "words": ["hello"]
+    },
+    "output": ["h", "e", "l", "l", "o"]
+  },
+  {
+    "input": {
+      "words": []
+    },
+    "output": []
+  },
+  {
+    "input": {
+      "words": ["x", "x", "x"]
+    },
+    "output": ["x"]
+  },
+  {
+    "input": {
+      "words": ["one", "two", "three"]
+    },
+    "output": ["o", "n", "e", "t", "w", "h", "r"]
+  }
+]
