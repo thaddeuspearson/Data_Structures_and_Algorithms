@@ -25,14 +25,14 @@
       "string1": "pale",
       "string2": "bake"
     },
-    "output": False
+    "output": false
   },
   {
     "input": {
       "string1": "abc",
       "string2": "abc"
     },
-    "output": False
+    "output": true
   },
   {
     "input": {
@@ -53,14 +53,14 @@
       "string1": "",
       "string2": ""
     },
-    "output": False
+    "output": true
   },
   {
     "input": {
       "string1": "abcde",
-      "string2": "abfde"
+      "string2": "abfce"
     },
-    "output": true
+    "output": false
   },
   {
     "input": {
