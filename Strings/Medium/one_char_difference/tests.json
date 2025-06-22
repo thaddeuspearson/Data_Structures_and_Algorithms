@@ -1,0 +1,72 @@
+[
+  {
+    "input": {
+      "string1": "pale",
+      "string2": "ple"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string1": "pales",
+      "string2": "pale"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string1": "pale",
+      "string2": "bale"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string1": "pale",
+      "string2": "bake"
+    },
+    "output": False
+  },
+  {
+    "input": {
+      "string1": "abc",
+      "string2": "abc"
+    },
+    "output": False
+  },
+  {
+    "input": {
+      "string1": "",
+      "string2": "a"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string1": "a",
+      "string2": ""
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string1": "",
+      "string2": ""
+    },
+    "output": False
+  },
+  {
+    "input": {
+      "string1": "abcde",
+      "string2": "abfde"
+    },
+    "output": true
+  },
+  {
+    "input": {
+      "string1": "abcde",
+      "string2": "abcfde"
+    },
+    "output": true
+  }
+]
