@@ -37,7 +37,6 @@ def solution_2(array, target):
 
     while left < right:
         mid = (left + right) // 2
-        print(f"{left=} {right=} {mid=} {target=}")
 
         if array[mid] == target:
             return mid
