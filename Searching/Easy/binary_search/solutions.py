@@ -45,7 +45,7 @@ def solution_2(array, target):
                 left = mid+1
             else:
                 right = mid
-    return -100
+    return -1
 
 
 if __name__ == "__main__":
