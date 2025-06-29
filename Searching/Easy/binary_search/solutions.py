@@ -47,6 +47,7 @@ def solution_2(array, target):
                 right = mid
     return -1
 
+# This is a test for GHA workflow
 
 if __name__ == "__main__":
     run_tests()
