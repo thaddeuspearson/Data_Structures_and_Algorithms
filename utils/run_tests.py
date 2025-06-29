@@ -136,7 +136,6 @@ def run_tests(tests_path: str = None) -> None:
 
     if incorrect_solutions:
         incorrect = ", ".join(solution for solution in incorrect_solutions)
-        print(f"Tests Failed for: {incorrect}\n")
-        exit("❌ Some solution test cases failed!")
+        exit(f"❌ Some Solution Test Cases Failed: {incorrect}")
     else:
-        exit(0)
+        exit("✅ All Test Cases Pass!")
