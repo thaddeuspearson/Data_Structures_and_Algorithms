@@ -16,7 +16,7 @@ def load_test_cases(tests_path: str) -> list:
         return load(f)
 
 
-def perform_tests(func_to_test: Callable, tests: dict):
+def perform_tests(func_to_test: Callable, tests: dict) -> list:
     """
     Runs the given test cases with the given function
 
@@ -32,6 +32,7 @@ def perform_tests(func_to_test: Callable, tests: dict):
     ]
     """
     results = []
+    failed_tests = False
     test_num = 1
 
     for test_case in tests:
@@ -39,6 +40,9 @@ def perform_tests(func_to_test: Callable, tests: dict):
         actual = func_to_test(**test_input)
         expected = test_case["output"]
         passed = actual == expected
+
+        if not passed and failed_tests is False:
+            failed_tests = True
 
         results.append({
             "func_name": func_to_test.__name__,
@@ -49,7 +53,7 @@ def perform_tests(func_to_test: Callable, tests: dict):
             "actual": actual
         })
         test_num += 1
-    return results
+    return results, failed_tests
 
 
 def display_results(results: list) -> None:
@@ -109,17 +113,30 @@ def get_test_cases_path():
     return Path(get_caller_module().__file__).resolve().parent / "tests.json"
 
 
-def run_tests() -> None:
+def run_tests(tests_path: str = None) -> None:
     """
     Handler for test case execution and display
     """
-    tests_path = get_test_cases_path()
+    tests_path = tests_path or get_test_cases_path()
 
     try:
         tests = load_test_cases(tests_path)
     except FileNotFoundError:
-        print("Missing valid `tests.json` file in the working directory.")
+        print(f"Missing valid `tests.json` file at {tests_path}.")
         exit(1)
 
+    incorrect_solutions = []
+
     for solution in get_solutions():
-        display_results(perform_tests(solution, tests))
+        results, failed_tests = perform_tests(solution, tests)
+        display_results(results)
+
+        if failed_tests:
+            incorrect_solutions.append(results[0]["func_name"])
+
+    if incorrect_solutions:
+        incorrect = ", ".join(solution for solution in incorrect_solutions)
+        print(f"Tests Failed for: {incorrect}\n")
+        exit(1)
+    else:
+        exit(0)
