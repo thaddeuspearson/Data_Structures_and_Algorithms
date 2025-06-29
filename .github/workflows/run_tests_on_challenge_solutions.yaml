@@ -1,4 +1,4 @@
-name: Run Tests on Challenge Solutions
+name: Run Challenge Tests
 
 on:
   push:
@@ -7,24 +7,35 @@ on:
       - '**/tests.json'
 
 jobs:
-  run-challenge-testcases:
+  run-tests:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.12
+          python-version: '3.12'
 
-      - name: Run tests on changed challenges
+      - name: Run tests for changed challenges
         run: |
-          changed_files=$(git diff --name-only origin/main...HEAD)
+          changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          echo "Changed files:"
+          echo "$changed_files"
+
           changed_dirs=$(echo "$changed_files" | grep -E 'solutions\.py|tests\.json' | cut -d'/' -f1-3 | uniq)
+          echo "Changed dirs:"
+          echo "$changed_dirs"
 
           for dir in $changed_dirs; do
             solutions="$dir/solutions.py"
             tests="$dir/tests.json"
+
+            echo "Checking files:"
+            echo "solutions: $solutions"
+            echo "tests: $tests"
 
             if [[ -f "$solutions" && -f "$tests" ]]; then
               echo "✅ Running tests in $dir"
