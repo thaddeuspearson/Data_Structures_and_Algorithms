@@ -10,7 +10,7 @@ def solution_1(array):
     Space Complexity: O(1)
     """
     greatest, greater, great = float('-inf'), float('-inf'), float('-inf')
-    
+
     for curr in array:
         if curr >= greatest:
             great = greater
