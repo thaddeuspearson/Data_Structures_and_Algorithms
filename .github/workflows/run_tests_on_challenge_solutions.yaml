@@ -1,0 +1,35 @@
+name: Run Tests on Challenge Solutions
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-changed-challenges:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12
+
+      - name: Run tests on changed challenges
+        run: |
+          changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          changed_dirs=$(echo "$changed_files" | grep -E 'solutions\.py|tests\.json' | cut -d'/' -f1-3 | uniq)
+
+          for dir in $changed_dirs; do
+            solutions="$dir/solutions.py"
+            tests="$dir/tests.json"
+
+            if [[ -f "$solutions" && -f "$tests" ]]; then
+              echo "✅ Running tests in $dir"
+              (cd "$dir" && python solutions.py)
+            else
+              echo "⚠️  Skipping $dir (needs both solutions.py and tests.json)"
+            fi
+          done
