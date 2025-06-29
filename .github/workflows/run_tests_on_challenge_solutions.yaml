@@ -2,12 +2,12 @@ name: Run Tests on Challenge Solutions
 
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    paths:
+      - '**/solutions.py'
+      - '**/tests.json'
 
 jobs:
-  test-changed-challenges:
+  run-challenge-testcases:
     runs-on: ubuntu-latest
 
     steps:
