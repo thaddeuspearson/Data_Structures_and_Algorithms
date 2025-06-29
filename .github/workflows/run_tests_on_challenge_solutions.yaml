@@ -21,7 +21,7 @@ jobs:
 
       - name: Run tests for changed challenges
         run: |
-          changed_files=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})
+          changed_files=$(git diff --name-only origin/main...HEAD)
           echo "Changed files:"
           echo "$changed_files"
 
