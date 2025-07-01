@@ -60,26 +60,26 @@ def display_results(results: list) -> None:
     """
     Prints the test results
     """
-    line = f"\n  *{'-' * 50}*"
+    line = f"*{'-' * 50}*"
     total_passed = 0
 
     for result in results:
         print(line)
         print(
-            f"   [{'+' if result['passed'] else '-'}] {result['func_name']}:"
-            f" Test {result['test_num']}\n\n"
+            f"  {'✅' if result['passed'] else '❌'} {result['func_name']}:"
+            f" Test {result['test_num']}"
         )
 
         if not result['passed']:
-            print(f"\t   input: {(result['input'])}\n")
+            print(f"\n\n\t   input: {(result['input'])}\n")
             print(f"\texpected: {result['expected']}\n")
             print(f"\t  actual: {result['actual']}\n")
         else:
             total_passed += 1
     print(line)
     print(
-        f"   Total Tests Passed: {total_passed} out of {len(results)}"
-        f" ({round(total_passed / len(results) * 100, 2):.2f}%)\n\n\n"
+        f"\n     Total Tests Passed: {total_passed} out of {len(results)}"
+        f" ({round(total_passed / len(results) * 100, 2):.2f}%)\n\n"
     )
 
 
