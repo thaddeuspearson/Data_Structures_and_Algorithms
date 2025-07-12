@@ -62,14 +62,15 @@ def display_results(results: list) -> None:
     """
     line = f"*{'-' * 50}*"
     total_passed = 0
+    func_name = (results[0]['func_name'])
 
+    print(f"\n  Running {func_name} Test Cases: ")
     for result in results:
         print(line)
         print(
-            f"  {'✅' if result['passed'] else '❌'} {result['func_name']}:"
+            f"  {'✅' if result['passed'] else '❌'} {func_name}:"
             f" Test {result['test_num']}"
         )
-
         if not result['passed']:
             print(f"\n\n\t   input: {(result['input'])}\n")
             print(f"\texpected: {result['expected']}\n")
@@ -78,7 +79,8 @@ def display_results(results: list) -> None:
             total_passed += 1
     print(line)
     print(
-        f"\n     Total Tests Passed: {total_passed} out of {len(results)}"
+        f"  Tests Passed: "
+        f"{total_passed} / {len(results)}"
         f" ({round(total_passed / len(results) * 100, 2):.2f}%)\n\n"
     )
 
@@ -136,8 +138,8 @@ def run_tests(tests_path: str = None) -> None:
 
     if incorrect_solutions:
         incorrect = ", ".join(solution for solution in incorrect_solutions)
-        print(f"❌ Some Solution Test Cases Failed: {incorrect}")
+        print(f"❌ Some Solution Test Cases Failed For: {incorrect}\n")
         exit(1)
     else:
-        print("✅ All Test Cases Pass!")
+        print("✅ All Solution Test Cases Pass!\n")
         exit(0)
