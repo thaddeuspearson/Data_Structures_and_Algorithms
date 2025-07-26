@@ -9,6 +9,10 @@ def solution_1(n):
     Time Complexity: O()
     Space Complexity: O()
     """
+    if n == 0 or n == 1:
+        return n
+    else:
+        return solution_1(n-2) + solution_1(n-1)
 
 
 if __name__ == "__main__":
