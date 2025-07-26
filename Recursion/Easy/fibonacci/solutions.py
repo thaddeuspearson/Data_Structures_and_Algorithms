@@ -6,8 +6,8 @@ from utils.run_tests import run_tests  # noqa E402
 
 def solution_1(n):
     """
-    Time Complexity: O()
-    Space Complexity: O()
+    Time Complexity: O(n) - n is the number to proces fibonacci up to
+    Space Complexity: O(1)
     """
     if n == 0 or n == 1:
         return n
