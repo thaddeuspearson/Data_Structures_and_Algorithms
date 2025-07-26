@@ -1,0 +1,56 @@
+[
+  {
+    "input": {
+      "n": 1
+    },
+    "output": 1
+  },
+  {
+    "input": {
+      "n": 2
+    },
+    "output": 1
+  },
+  {
+    "input": {
+      "n": 3
+    },
+    "output": 2
+  },
+  {
+    "input": {
+      "n": 4
+    },
+    "output": 3
+  },
+  {
+    "input": {
+      "n": 5
+    },
+    "output": 5
+  },
+  {
+    "input": {
+      "n": 6
+    },
+    "output": 8
+  },
+  {
+    "input": {
+      "n": 10
+    },
+    "output": 55
+  },
+  {
+    "input": {
+      "n": 15
+    },
+    "output": 610
+  },
+  {
+    "input": {
+      "n": 20
+    },
+    "output": 6765
+  }
+]
